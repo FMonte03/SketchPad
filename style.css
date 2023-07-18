@@ -1,0 +1,58 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 178, 255);
+}
+
+
+
+
+h1{
+text-align: center;
+font-size: 48px;
+color: yellow;
+
+
+}
+
+.top{
+    box-sizing: border-box;
+    background-color: red;
+    width: 760px;  
+    border-radius: 10px;
+
+}
+
+.gridContainer{
+    border-left-width: 60px;
+    border-right-width: 60px;
+    border-style: solid;
+    border-color: red;
+    border-top-width: 0px ;
+    border-bottom-width: 0px;
+    border-radius: 10px;
+    height: 320px;
+    width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+
+ 
+
+}
+.gridSquare{
+    box-sizing: content-box;
+    border: solid 1px black;
+    background-color: white;
+    
+
+}
+/* to see what grid looks like border: solid 1px black;
+    height: 14px;
+    width: 14px;
+    border: solid 1px black; 
+    otherwise erase black and change height and width back to 16px
+    */
+
+.menu{
+    box-sizing: border-box;
+}
