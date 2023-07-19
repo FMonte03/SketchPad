@@ -24,6 +24,17 @@ function makeGrid(defaultSize, defaultSquareSize){
     }
 }
 
+const slider = document.querySelector('.slider');
+slider.addEventListener('change', showPixels); 
+
+function showPixels(){
+
+const p = document.querySelector('#sliderValue'); 
+p.innerHTML = `${slider.value}`;
+
+
+
+}
 makeGrid(defaultSize, defaultSquareSize); 
 
 function changeSquareColor(elem){
