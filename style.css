@@ -1,9 +1,15 @@
 body{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: rgb(255, 178, 255);
+    gap: 0px;
+    align-items: center;
+    
 }
 
+.wrapper{
+    margin-top: 30px;
+}
 
 
 
@@ -11,7 +17,7 @@ h1{
 text-align: center;
 font-size: 48px;
 color: yellow;
-
+margin: 0px;
 
 }
 
@@ -19,7 +25,7 @@ color: yellow;
     box-sizing: border-box;
     background-color: red;
     width: 760px;  
-    border-radius: 10px;
+   
 
 }
 
@@ -30,7 +36,7 @@ color: yellow;
     border-color: red;
     border-top-width: 0px ;
     border-bottom-width: 0px;
-    border-radius: 10px;
+   
     height: 320px;
     width: 640px;
     display: flex;
@@ -53,6 +59,23 @@ color: yellow;
     otherwise erase black and change height and width back to 16px
     */
 
-.menu{
+.bottom{
+    border-color: red;
+    border-style: solid;
     box-sizing: border-box;
+    width: 760px;
+    height: 55px;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 75px 0px 75px;
+
+
 }
+
+.slider{
+    accent-color: yellow;
+
+    }
+
