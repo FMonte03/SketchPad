@@ -21,17 +21,18 @@ function clearGrid(){
 
 let currentColor = 'black'; 
 
-function makeGrid(gridSize, squareSize){
+function makeGrid(gridSize, squareSize, bool){
     for(let i = 0; i< gridSize; i++){
         const gridSquare = document.createElement('div'); 
         gridSquare.classList.add("gridSquare"); 
         gridSquare.setAttribute('style', `height: ${squareSize}px; width: ${squareSize}px;`);
-        gridSquare.addEventListener('mouseover' ,() => {changeSquareColor(gridSquare)});
+        gridSquare.addEventListener('mouseover' ,() => {changeSquareColor(gridSquare, bool)});
         gridContainer.append(gridSquare);
 
 
     }
 }
+
 
 /*
 '1' : [200, 32]  ,
@@ -67,7 +68,7 @@ slider.addEventListener('change',() => {
     
     showPixels();
     clearGrid(); 
-    makeGrid(valueMap[`${slider.value}`][0], valueMap[`${slider.value}`][1] ); 
+    makeGrid(valueMap[`${slider.value}`][0], valueMap[`${slider.value}`][1], black ); 
 
 
 
@@ -90,16 +91,34 @@ const p = document.querySelector('#sliderValue');
 
 
 
-function changeSquareColor(elem){
-
-    elem.style.backgroundColor = currentColor; 
-
+function changeSquareColor(elem, bool ){
+    if (bool == true){
+    elem.style.backgroundColor = currentColor; }
+    else if(bool == false){
+    elem.style.backgroundColor = `rgb(${Math.random() * 255} ,${Math.random() * 255} ,${Math.random() * 255} )`;
+    
+    }
 
 }
 
 
 
+const reset = document.getElementById('reset'); 
+reset.addEventListener('click', () => {
+clearGrid(); 
+black = true; 
+makeGrid(valueMap[`${slider.value}`][0], valueMap[`${slider.value}`][1], black );
+
+}); 
 
 
+const rainbow = document.getElementById('rainbow'); 
+rainbow.addEventListener('click', () => { 
+    clearGrid(); 
+    black = false; 
+    makeGrid(valueMap[`${slider.value}`][0], valueMap[`${slider.value}`][1], black ); 
+  })
 
-makeGrid(800, 16); 
+// black refers to the current color, if black = true, current color is black, if false current color is rainbow. 
+let black = true; 
+makeGrid(800, 16, black); 
