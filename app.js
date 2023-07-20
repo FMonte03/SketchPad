@@ -1,8 +1,10 @@
 
 
+
+
+
 const gridContainer  = document.querySelector('.gridContainer'); 
-const defaultSize = 800;
-const defaultSquareSize = "14px";
+
 
 function clearGrid(){
     while(gridContainer.firstChild){
@@ -16,7 +18,8 @@ function clearGrid(){
 
 
 
-let currentColor = 'black'
+
+let currentColor = 'black'; 
 
 function makeGrid(gridSize, squareSize){
     for(let i = 0; i< gridSize; i++){
@@ -60,22 +63,32 @@ const pixelMap = {
 
 
 const slider = document.querySelector('.slider');
-slider.addEventListener('change', showPixels); 
+slider.addEventListener('change',() => { 
+    
+    showPixels();
+    clearGrid(); 
+    makeGrid(valueMap[`${slider.value}`][0], valueMap[`${slider.value}`][1] ); 
+
+
+
+}); 
+
+
 
 function showPixels(){
 
-const p = document.querySelector('#sliderValue'); 
 p.innerHTML = `${pixelMap[`${slider.value}`]}`;
-
-
 
 }
 
 
 
 
+const p = document.querySelector('#sliderValue'); 
 
-makeGrid(2048, 8); 
+
+
+
 
 function changeSquareColor(elem){
 
@@ -84,3 +97,9 @@ function changeSquareColor(elem){
 
 }
 
+
+
+
+
+
+makeGrid(800, 16); 
