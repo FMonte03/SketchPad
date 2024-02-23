@@ -53,10 +53,6 @@ const valueMap = {
 const hamburger = document.querySelector('.hamburger')
 const offMenu = document.querySelector('.offMenu')
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle("active")
-    offMenu.classList.toggle("active")
-})
 
 
 
